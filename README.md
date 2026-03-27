@@ -52,16 +52,25 @@ ollama pull qwen:4b
 
 ### Bước 5: Giải Nén Dữ Liệu CV
 
+**File cần tải:** `data_cvs_full.zip` (0.52 MB, chứa 486 CV đã trích text)
+
 ```bash
-# Tải file data_cvs.zip từ Google Drive hoặc nơi bạn lưu
-# Giải nén vào thư mục data/
-unzip data_cvs.zip -d data/
+# Upload file data_cvs_full.zip lên server (SCP/SFTP/Google Drive)
+# Sau đó giải nén:
+unzip data_cvs_full.zip -d data/
+
+# Kiểm tra file đã có:
+ls -lh data/cvs_extracted.jsonl
+wc -l data/cvs_extracted.jsonl  # Phải có 486 dòng
 
 # Cấu trúc sau khi giải nén:
 # data/
-#   ├── cvs_extracted.jsonl  (CV đã trích text)
-#   ├── raw_cvs/             (PDF/DOCX gốc - optional)
+#   └── cvs_extracted.jsonl  (486 CV đã trích text, sẵn sàng xử lý)
 ```
+
+**Lưu ý:** File `data_cvs_full.zip` KHÔNG có trên GitHub (quá lớn). Bạn cần:
+1. Tải từ Google Drive / nơi lưu trữ riêng
+2. Hoặc copy từ máy local lên server
 
 ### Bước 6: Chạy Ollama Server
 

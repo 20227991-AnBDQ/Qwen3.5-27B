@@ -42,19 +42,24 @@ Qwen3.5-27B/
 
 ### 3. File dữ liệu (KHÔNG có trên GitHub)
 
-**File:** `data_cvs.zip` (đã tạo ở local)
+**File:** `data_cvs_full.zip` (0.52 MB)
 
 **Nội dung:**
-- `data/cvs_extracted.jsonl` - CV đã trích text từ PDF/DOCX
+- `data/cvs_extracted.jsonl` - 486 CV đã trích text từ PDF/DOCX
 
-**Kích thước:** ~[kiểm tra kích thước file]
+**Kích thước:** 0.52 MB (nén từ ~2MB text)
 
 **Cách upload lên server:**
 ```bash
-# Option 1: SCP
-scp data_cvs.zip user@server:/path/to/Qwen3.5-27B/
+# Option 1: SCP (từ máy Windows)
+scp data_cvs_full.zip user@server:/path/to/Qwen3.5-27B/
 
-# Option 2: Upload lên Google Drive, sau đó tải trên server
+# Option 2: Upload lên Google Drive
+# 1. Upload data_cvs_full.zip lên Google Drive
+# 2. Share link public
+# 3. Trên server: gdown https://drive.google.com/uc?id=FILE_ID -O data_cvs_full.zip
+
+# Option 3: SFTP (dùng WinSCP hoặc FileZilla)
 ```
 
 ---
